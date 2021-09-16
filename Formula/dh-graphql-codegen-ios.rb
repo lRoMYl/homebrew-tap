@@ -1,4 +1,4 @@
-class DhGraphqlCodegenIosTest < Formula
+class DhGraphqlCodegenIos < Formula
   desc "Swift GraphQL Code Generator"
   homepage "https://github.com/lRoMYl/dh-graphql-codegen-ios"
   url "https://github.com/lRoMYl/dh-graphql-codegen-ios/archive/0.1.10.tar.gz"
