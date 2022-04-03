@@ -3,8 +3,8 @@ require_relative "../lib/private_strategy"
 class DhGraphqlCodegen < Formula
   desc "Swift GraphQL Code Generator"
   homepage "https://github.com/lRoMYl/dh-graphql-codegen-ios"
-  url "https://github.com/lRoMYl/dh-graphql-codegen-ios/archive/0.5.3.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy
-  sha256 "c2037f4f06f5d0af6142ae9389a158d68655fea0baa4cb074566051ed574bd43"
+  url "https://github.com/lRoMYl/dh-graphql-codegen-ios/archive/0.6.0.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy
+  sha256 "d8d66406cd1adf72924aa04749c57237ee56f0ef63d04d4dda00ae1a03a4cb42"
   head "https://github.com/lRoMYl/dh-graphql-codegen-ios.git"
 
   depends_on :xcode => :build
