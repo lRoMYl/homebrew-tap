@@ -1,8 +1,8 @@
 class SwiftGraphqlCodegen < Formula
   desc "Swift GraphQL Code Generator"
   homepage "https://github.com/lRoMYl/swift-graphql-codegen"
-  url "https://github.com/lRoMYl/swift-graphql-codegen/archive/0.8.3.tar.gz"
-  sha256 "d02db93342b82aff32a8bf03b2ad638ee0fc7d6e73a2084ee339ddd10065aa33"
+  url "https://github.com/lRoMYl/swift-graphql-codegen/archive/alpha-0.9.0.tar.gz"
+  sha256 "01a89fb95166d88ef4de3a15c4ac911596cf325e9a42eda5b6aa3966a6264ad1"
   head "https://github.com/lRoMYl/swift-graphql-codegen.git"
 
   depends_on :xcode => :build
