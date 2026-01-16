@@ -1,6 +1,6 @@
 cask "dhbootlegtoolkit" do
-  version "0.0.1"
-  sha256 "d6f37cf823edea9ab04d655ada72ff6a2b9698429e694d7b01fed488ca49f227"
+  version "0.0.2"
+  sha256 "87d6c8633068bb8df4be39eb1e2ad93a8a78e16c6820bb8f55664e66b202e4f5"
 
   url "https://github.com/lRoMYl/DHBootlegToolkit/releases/download/#{version}/DHBootlegToolkit-#{version}.zip"
   name "DHBootlegToolkit"
@@ -13,9 +13,7 @@ cask "dhbootlegtoolkit" do
 
   # Remove quarantine attribute to allow unsigned app to run
   postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/DHBootlegToolkit.app"],
-                   sudo: false
+    system "/usr/bin/xattr", "-dr", "com.apple.quarantine", "#{appdir}/DHBootlegToolkit.app"
   end
 
   zap trash: [
