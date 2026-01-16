@@ -9,12 +9,12 @@ class Dhbootlegtoolkit < Formula
   depends_on "xcodegen" => :build
   depends_on macos: :sequoia
 
+  # Disable sandbox to allow xcodebuild to resolve local Swift packages
+  env :std
+
   def install
     # Generate Xcode project using XcodeGen
     system "xcodegen", "generate"
-
-    # Set up environment to allow Swift package resolution
-    ENV.deparallelize
 
     # Build the application
     system "xcodebuild",
