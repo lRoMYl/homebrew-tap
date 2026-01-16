@@ -11,6 +11,13 @@ cask "dhbootlegtoolkit" do
 
   app "DHBootlegToolkit.app"
 
+  # Remove quarantine attribute to allow unsigned app to run
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/DHBootlegToolkit.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Application Support/DHBootlegToolkit",
     "~/Library/Caches/com.dhbootlegtoolkit.app",
