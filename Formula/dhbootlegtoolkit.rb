@@ -13,13 +13,20 @@ class Dhbootlegtoolkit < Formula
     # Generate Xcode project using XcodeGen
     system "xcodegen", "generate"
 
+    # Set up environment to allow Swift package resolution
+    ENV.deparallelize
+
     # Build the application
-    xcodebuild "-scheme", "DHBootlegToolkit",
-               "-configuration", "Release",
-               "-derivedDataPath", "#{buildpath}/build",
-               "SYMROOT=#{buildpath}/build",
-               "CONFIGURATION_BUILD_DIR=#{buildpath}/build/Release",
-               "build"
+    system "xcodebuild",
+           "-scheme", "DHBootlegToolkit",
+           "-configuration", "Release",
+           "-derivedDataPath", "#{buildpath}/build",
+           "SYMROOT=#{buildpath}/build",
+           "CONFIGURATION_BUILD_DIR=#{buildpath}/build/Release",
+           "CODE_SIGN_IDENTITY=-",
+           "CODE_SIGNING_REQUIRED=NO",
+           "CODE_SIGNING_ALLOWED=NO",
+           "build"
 
     # Install the .app bundle to prefix
     prefix.install "build/Release/DHBootlegToolkit.app"
