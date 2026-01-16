@@ -13,8 +13,19 @@ class Dhbootlegtoolkit < Formula
   env :std
 
   def install
+    # Build the Core library first
+    cd "DHBootlegToolkitCore" do
+      system "swift", "build", "-c", "release"
+    end
+
     # Generate Xcode project using XcodeGen
     system "xcodegen", "generate"
+
+    # Resolve packages with explicit cloned packages path
+    system "xcodebuild",
+           "-resolvePackageDependencies",
+           "-scheme", "DHBootlegToolkit",
+           "-clonedSourcePackagesDirPath", "#{buildpath}/SourcePackages"
 
     # Build the application
     system "xcodebuild",
@@ -26,6 +37,8 @@ class Dhbootlegtoolkit < Formula
            "CODE_SIGN_IDENTITY=-",
            "CODE_SIGNING_REQUIRED=NO",
            "CODE_SIGNING_ALLOWED=NO",
+           "-skipPackagePluginValidation",
+           "-skipMacroValidation",
            "build"
 
     # Install the .app bundle to prefix
