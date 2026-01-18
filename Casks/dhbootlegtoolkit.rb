@@ -7,6 +7,9 @@ cask "dhbootlegtoolkit" do
   desc "Manage translation keys and S3 feature configuration"
   homepage "https://github.com/lRoMYl/DHBootlegToolkit"
 
+  # Declare that app has built-in update mechanism via Sparkle
+  auto_updates true
+
   depends_on macos: ">= :sequoia"
 
   app "DHBootlegToolkit.app"
