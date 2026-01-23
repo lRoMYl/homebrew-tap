@@ -1,6 +1,6 @@
 cask "dhbootlegtoolkit" do
-  version "0.0.7"
-  sha256 "48d96177326a0c29d5f62b484cbcc88d418f3b11cf4e624050bbbfc24eb826d0"
+  version "0.0.8"
+  sha256 "dd2e8610d46b80edb5c35f057e678c130d583135fc893e563e76154e7dbdaad2"
 
   url "https://github.com/lRoMYl/DHBootlegToolkit/releases/download/#{version}/DHBootlegToolkit-#{version}.zip"
   name "DHBootlegToolkit"
